@@ -20,9 +20,10 @@ public class PlaceHolderMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         MovingTheBall();
     }
-
+    
     private void MovingTheBall()
     {
         if (Input.touchCount > 0)
@@ -35,8 +36,10 @@ public class PlaceHolderMovement : MonoBehaviour
             if (position.x > startingPosition.x)
             {
                 //transform.position+=new Vector3(speed*Time.deltaTime,0,0);
-                transform.Translate(Vector3.right * Time.deltaTime * speed, Space.World);
-                rb.velocity = new Vector3(speed, rb.velocity.y, 0f);
+                //transform.Translate(Vector3.right * Time.deltaTime * speed, Space.World);
+                rb.velocity = new Vector3(speed, 10f*Time.deltaTime, 0f);
+
+                //rb.velocity = new Vector3(speed, rb.velocity.y, 0f);
                 /*rb.AddForce(Vector3.right*speed);
                 
                 if (flag == 1)
@@ -53,7 +56,9 @@ public class PlaceHolderMovement : MonoBehaviour
             }
             else if (position.x <= startingPosition.x)
             {
-                rb.velocity = new Vector3(-speed, rb.velocity.y, 0f);
+                //rb.velocity = new Vector3(-speed, rb.velocity.y, 0f);
+                rb.velocity = new Vector3(-speed, 10f * Time.deltaTime, 0f);
+
                 //transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
                 //transform.Translate(Vector3.left * Time.deltaTime*speed, Space.World);
                 /*rb.AddForce(Vector3.left * speed);
