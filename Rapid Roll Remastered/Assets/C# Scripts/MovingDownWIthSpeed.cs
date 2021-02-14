@@ -44,6 +44,6 @@ public class MovingDownWIthSpeed : MonoBehaviour
     {
         transform.position += new Vector3(0, -speed * Time.deltaTime, 0);
         timePassed += Time.deltaTime;
-        speed += .0003f;
+        speed += .0005f;
     }
 }

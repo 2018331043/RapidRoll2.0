@@ -10,17 +10,20 @@ public class PlaceHolderMovement : MonoBehaviour
     public Rigidbody2D rb;
     private float TimePassed;
     private int flag1 = 1,flag2=1,flag=0;
+    public float gravitySpeed = 20f;
     void Start()
     {
         startingPosition = transform.position;
         rb = GetComponent<Rigidbody2D>();
         TimePassed = Time.deltaTime;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        gravitySpeed += .0005f;
+        speed+= .0005f;
         MovingTheBall();
     }
     
@@ -37,7 +40,7 @@ public class PlaceHolderMovement : MonoBehaviour
             {
                 //transform.position+=new Vector3(speed*Time.deltaTime,0,0);
                 //transform.Translate(Vector3.right * Time.deltaTime * speed, Space.World);
-                rb.velocity = new Vector3(speed, 10f*Time.deltaTime, 0f);
+                rb.velocity = new Vector3(speed, -gravitySpeed, 0f);
 
                 //rb.velocity = new Vector3(speed, rb.velocity.y, 0f);
                 /*rb.AddForce(Vector3.right*speed);
@@ -57,7 +60,7 @@ public class PlaceHolderMovement : MonoBehaviour
             else if (position.x <= startingPosition.x)
             {
                 //rb.velocity = new Vector3(-speed, rb.velocity.y, 0f);
-                rb.velocity = new Vector3(-speed, 10f * Time.deltaTime, 0f);
+                rb.velocity = new Vector3(-speed, -gravitySpeed, 0f);
 
                 //transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
                 //transform.Translate(Vector3.left * Time.deltaTime*speed, Space.World);
@@ -76,6 +79,9 @@ public class PlaceHolderMovement : MonoBehaviour
             }
             //transform.position = position;
 
+        }
+        else {
+            rb.velocity = new Vector3(rb.velocity.x, -gravitySpeed , 0f);
         }
     }
 }

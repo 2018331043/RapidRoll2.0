@@ -963,8 +963,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 2.05
-  m_AngularDrag: 1.13
+  m_LinearDrag: 2.06
+  m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -999,8 +999,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93baf490814bc474890f306fb3f69698, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 7
   rb: {fileID: 0}
+  gravitySpeed: 5
 --- !u!4 &1257393860 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1765572747852646661, guid: 92037dc4ad0266648a9ddfd043bb7d94,
